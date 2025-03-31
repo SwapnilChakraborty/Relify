@@ -19,7 +19,8 @@
     "next-auth": "^4.24.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-hook-form": "^7.55.0"
+    "react-hook-form": "^7.55.0",
+    "vercel": "^41.4.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
