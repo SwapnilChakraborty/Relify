@@ -1,4 +1,4 @@
-import ImageKit from "imagekit"
+import ImageKit from "imagekit";
 import { NextResponse } from "next/server";
 
 const imagekit = new ImageKit({
@@ -9,14 +9,13 @@ const imagekit = new ImageKit({
 
 export async function GET() {
   try {
-    const authenticationParameter=imagekit.getAuthenticationParameters();
+    const authenticationParameter = imagekit.getAuthenticationParameters();
     return NextResponse.json(authenticationParameter);
-
+  } catch (error) {
+    console.error("ImageKit Auth Error:", error); // ✅ Log the error
+    return NextResponse.json( // ✅ Ensure response is returned
+      { error: "Failed to get authentication parameters" },
+      { status: 500 }
+    );
   }
-  catch (error) {
-    NextResponse.json({ error: "Failed to get authentication parameters" }, { status: 500 });
-  }
-
-
-
 }
