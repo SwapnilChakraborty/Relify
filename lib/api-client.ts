@@ -2,9 +2,9 @@ import { IVideo } from "@/models/Video";
 
 export type VideoFormData = Omit<IVideo, "_id">;
 
-type FetchOptions = {
+type FetchOptions<T = unknown> = {
   method?: "GET" | "POST" | "PUT" | "DELETE";
-  body?: any;
+  body?: T; // Use a generic instead of `any`
   headers?: Record<string, string>;
 };
 
